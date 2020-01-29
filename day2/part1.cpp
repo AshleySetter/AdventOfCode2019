@@ -5,7 +5,7 @@
 #include <vector>
 #include <typeinfo>
 
-int main(){
+int part1(){
   std::ifstream readfile;
   std::string filetext;
   std::vector<int> Intcode;
@@ -31,10 +31,10 @@ int main(){
       // this is only performed if the next char is a ','
     }
   }
-  for(auto i = Intcode.begin(); i != Intcode.end(); i++){
+  /*  for(auto i = Intcode.begin(); i != Intcode.end(); i++){
     std::cout << *i << "\n";
   }
-  std::cout << "after processing\n";
+  std::cout << "after processing\n";*/
   Intcode.at(1) = 12;
   Intcode.at(2) = 2;
   
@@ -58,8 +58,16 @@ int main(){
     }
     std::cout << "run" << i << "\n"; */
   }
-  for(auto i = Intcode.begin(); i != Intcode.end(); i++){
+  /*  for(auto i = Intcode.begin(); i != Intcode.end(); i++){
     std::cout << *i << "\n";
-  }
+    }*/
+  return Intcode.at(0);
+}
+
+int main(){
+  int output;
+  
+  output = part1();
+  std::cout << output << "\n";
   return 0;
 }
